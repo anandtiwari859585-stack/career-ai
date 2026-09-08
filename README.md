@@ -4,9 +4,62 @@
 
 ---
 
-## 🚀 Live Demo
+## 🌐 Local Preview
 
-> Coming soon — deploy on Vercel
+After setup, the app runs at:
+
+**👉 http://localhost:3000**
+
+---
+
+## 🚀 Quick Start (Run Locally)
+
+### Prerequisites
+- **Node.js** v18+ → [nodejs.org](https://nodejs.org)
+- **Git** → [git-scm.com](https://git-scm.com)
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/YOUR_USERNAME/career-ai.git
+cd career-ai
+npm install
+```
+
+### 2. Set up Supabase
+1. Create a free project at [supabase.com](https://supabase.com)
+2. Go to **SQL Editor** → paste & run the contents of [`supabase/schema.sql`](./supabase/schema.sql)
+3. Enable **Google OAuth** under **Authentication → Providers → Google**
+
+### 3. Set up Google OAuth
+1. Go to [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Credentials
+2. Create an **OAuth 2.0 Client ID**
+3. Add authorized redirect URI:
+   ```
+   https://<your-supabase-ref>.supabase.co/auth/v1/callback
+   ```
+
+### 4. Get a Gemini API Key (free)
+1. Visit [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. Generate a free API key (1500 requests/day, no credit card needed)
+
+### 5. Create `.env.local`
+Create a file named `.env.local` inside the `career-ai/` folder:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+GEMINI_API_KEY=your_gemini_api_key
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+> 💡 Supabase keys are found at: **Project Settings → API**
+
+### 6. Run the app
+```bash
+npm run dev
+```
+Open **http://localhost:3000** in your browser ✅
+
+> ⚠️ `.env.local` is intentionally excluded from Git (secrets are safe). Every developer must set up their own keys.
 
 ---
 
@@ -65,47 +118,6 @@ career-ai/
 └── supabase/
     └── schema.sql                # Full DB schema, RLS policies, triggers
 ```
-
----
-
-## ⚡ Getting Started
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/YOUR_USERNAME/career-ai.git
-cd career-ai
-npm install
-```
-
-### 2. Set up Supabase
-1. Create a project at [supabase.com](https://supabase.com)
-2. Go to **SQL Editor** and run the contents of `supabase/schema.sql`
-3. Enable **Google OAuth** under **Authentication → Providers → Google**
-
-### 3. Set up Google OAuth
-1. Go to [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Credentials
-2. Create an OAuth 2.0 Client ID
-3. Add authorized origins: `http://localhost:3000`
-4. Add redirect URI: `https://<your-supabase-ref>.supabase.co/auth/v1/callback`
-
-### 4. Set up Gemini API
-1. Get a free API key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-
-### 5. Configure environment variables
-Create a `.env.local` file in the root:
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-GEMINI_API_KEY=your_gemini_api_key
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
-
-### 6. Run the app
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000)
 
 ---
 

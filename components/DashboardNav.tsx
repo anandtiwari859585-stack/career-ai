@@ -78,7 +78,7 @@ export default function DashboardNav({ user, profile }: { user: { email?: string
             )}
           </div>
           {profile?.avatar_url ? (
-            <img src={profile.avatar_url} alt="avatar" className="w-7 h-7 rounded-full" style={{ ring: '1px solid rgba(139,92,246,0.4)' }} />
+            <img src={profile.avatar_url} alt="avatar" className="w-7 h-7 rounded-full" style={{ border: '1px solid rgba(139,92,246,0.4)' }} />
           ) : (
             <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs" style={{ background: 'rgba(124,58,237,0.2)', border: '1px solid rgba(139,92,246,0.3)' }}>👤</div>
           )}
