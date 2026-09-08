@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = ".next/cache,.netlify"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
