@@ -4,9 +4,15 @@
 
 ---
 
-## 🌐 Local Preview
+## 🌐 Live Demo
 
-After setup, the app runs at:
+**👉 https://helixcareerai.netlify.app**
+
+---
+
+## 💻 Local Preview
+
+To run locally, after setup open:
 
 **👉 http://localhost:3000**
 
